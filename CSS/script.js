@@ -4,6 +4,13 @@ var discbuttonElement = document.getElementById("apply-discount");
 
 discbuttonElement.addEventListener("click", function() {
  
+    let bodyElement = document.getElementById("body");
+    if (discountvalue.value>=50) {
+        bodyElement.style.backgroundColor = "#effb14ff";
+    }
+    else {
+        bodyElement.style.backgroundColor = "#ffffff";
+    }
     let oldcostElement = document.getElementById("listprice");
     let oldcost = oldcostElement.textContent;
 
@@ -18,6 +25,7 @@ discbuttonElement.addEventListener("click", function() {
     newcostElement.textContent = "₹" + finalPrice;
 
 });
+
 
 
 
