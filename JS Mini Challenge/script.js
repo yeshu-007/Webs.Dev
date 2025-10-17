@@ -18,7 +18,7 @@ discbuttonElement.addEventListener("click", function() {
     let discountvalue = document.getElementById("discount").valueAsNumber;
 
     if (discountvalue >= 50) {
-        bodyElement.style.backgroundColor = "#effb14ff";
+        bodyElement.style.backgroundColor = "#b8961dff";
     } else {
         bodyElement.style.backgroundColor = "#ffffff";
     }
