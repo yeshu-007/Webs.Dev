@@ -1,0 +1,167 @@
+
+body {
+  background-color: #f5f1ee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  max-width: 650px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.image img {
+  width: 280px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.type {
+  color: #888;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+}
+
+.info h2 {
+  font-size: 20px;
+  margin: 0 0 10px;
+  color: #1d1d1f;
+}
+
+.tagline {
+  font-style: italic;
+  color: #444;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.price h3 {
+  color: #983f04;
+  font-size: 22px;
+  margin: 0;
+}
+
+.price span {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+}
+
+.buybtn, .cart-btn {
+  background-color: #157347;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+.buybtn:hover, .cart-btn:hover {
+  transform: scale(1.05);
+}
+
+.cart-btn {
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cart-btn:hover {
+  background-color: #45a049;
+}
+
+.cart-btn:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    max-width: 90%;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .info {
+    padding: 15px;
+  }
+
+  .type {
+    font-size: 0.8rem;
+  }
+
+  .info h2 {
+    font-size: 1.2rem;
+  }
+
+  .tagline, .description {
+    font-size: 0.9rem;
+  }
+
+  .price h3 {
+    font-size: 1.1rem;
+  }
+
+  .price span {
+    font-size: 0.8rem;
+  }
+  
+  .buybtn, .cart-btn {
+    width: 100%;
+    text-align: center;
+    align-self: center;
+  }
+}
