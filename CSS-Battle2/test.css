@@ -116,46 +116,43 @@ body {
   border: 2px solid #fff;
 }
 
-/* Mobile dev */
-@media (min-width: 768px) {
-  .testimonials {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "main ratings"
-      "reviews reviews";
-    gap: 2rem;
-  }
-
-  .main {
-    grid-area: main;
-  }
-
+/* Mobile screens */
+@media (max-width: 767px) {
   .ratings {
-    grid-area: ratings;
-    justify-content: center;
+    padding-bottom: 1.5rem;
+    align-items: center;
   }
 
   .reviews {
-    grid-area: reviews;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .reviews div {
-    flex: 1;
-    min-width: 250px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .tagline h2 {
-    font-size: 2.2rem;
+    padding-bottom: 1.5rem;
   }
 
   .rating-card {
-    font-size: 1rem;
+    width: 90%;
+    margin: 0 auto;
   }
+
+  .reviews div {
+    text-align: center;
+    padding: 1.8rem;
+  }
+
+  .tagline h2, 
+  .tagline h4, 
+  .tagline p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonials {
+    padding: 2.5rem 1.2rem;
+  }
+}
+
+/* Mobile responsiveness improvements */
+
+@media (max-width: 600px) {
+  .ratings, .reviews { text-align: center; }
+  .reviews div { padding: 1rem; }
 }
