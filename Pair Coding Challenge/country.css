@@ -1,0 +1,105 @@
+
+.header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 2px solid #080808;
+}
+
+.header h2 {
+    margin: 0;
+    font-family: 'Trebuchet MS';
+    font-weight: 500px;
+}
+
+.header button {
+    padding: 5px 10px;
+    font-family: 'Trebuchet MS';
+    font-weight: 500;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(194, 192, 192);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.subhead {
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;    
+}
+
+.searchbar{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border: #080808;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchbar input {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family:sans-serif;
+}
+
+.searchbar button{
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    width: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family:sans-serif;
+}
+
+.country-cards{
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 20px;
+}
+
+.card{   
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family:'Gill Sans';
+    cursor:pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: auto;
+    height: 120px;
+    overflow:hidden;
+}
+
+
+.card:hover{
+    background-color: rgb(228, 227, 218);
+    transform: scale(1.05); 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.searchbar:hover{
+    transform: scale(1.05); 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+
+}

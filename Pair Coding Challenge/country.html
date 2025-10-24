@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where in the World?</title>
+    <link rel="stylesheet" href="country.css">
+</head>
+
+<body>
+
+    <div class="header", id="header">
+        <h2>Where in the World?</h2> 
+        <button id="toggle">Dark Mode🌜</button>
+    </div>
+
+    <div class="subhead">
+
+        <div class="searchbar">
+            <label for="search-input"></label>
+            <input type="text" id="search-input" placeholder="🔍Search for a country">
+            <button id="search-input" onclick="search()">Search</button>
+        </div>
+        
+        <div class="filter">
+            <label for="region-filter">Filter by Region:</label>
+            <select id="region-filter">
+                <option value="all">All Regions</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+    </div>
+
+    <section class="country-cards" id="country-cards">
+
+        <div class="card">
+        <img src="data[0].flags.png" alt="Country Flag" class="country-flag">
+
+            <div class="country-info">
+                <h3 class="country-name" id="country-name">United States of America</h3>
+                <p><b>Population:</b> 331,002,651</p>
+                <p><b>Region:</b> Americas</p>
+                <b>Capital:</b><p id="caps"> Washington, D.C.</p>
+             </div>
+             
+        </div>
+
+    </section>
+<script src="country.js"></script>
+</body>
+
+</html>
