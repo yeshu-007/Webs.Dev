@@ -1,15 +1,20 @@
 const countrycard = document.getElementById("country-card");
 const countryname = document.getElementById("country-name");
 const caps = document.getElementById("caps");
-
 const searchInput = document.getElementById("search-input");
-const regionFilter = document.getElementById("region-filter");
 const toggleMode = document.getElementById("toggle");
 const body = document.body;
 
 async function page() {
-    const countrynameurl = await fetch (`https://countriesnow.space/api/v0.1/countries/capital`)
+
+    const countryflagurl = await fetch(`https://countriesnow.space/api/v0.1/countries/flag/images`);
+    const dhwaja = await countryflagurl.json();
+
+    const countrynameurl = await fetch (`https://countriesnow.space/api/v0.1/countries/capital`);
     var desha = await countrynameurl.json()
+
+    const countrypopurl = await fetch(`https://countriesnow.space/api/v0.1/countries/population`);
+    var jana = await countrypopurl.json();
 
     const countryCardsContainer= document.getElementById("country-cards")
     countryCardsContainer.innerHTML = "";
@@ -17,11 +22,17 @@ async function page() {
 for (let i=0; i<20; i++){
     const country = desha.data[i];
 
-    const card = document.createElement('div');
+    const countryflag = dhwaja.data[i];
+
+    const countrypop = jana.data[i];
+
+        const card = document.createElement('div');
         card.classList.add('card');
 
-    const flag = document.createElement('img');
+        const flag = document.createElement('img');
         flag.classList.add('country-flag');
+        flag.src = countryflag.flag;
+        flag.alt = `${country.name} Flag`;
     
     const info = document.createElement('div');
         info.classList.add('country-info');
@@ -33,16 +44,43 @@ for (let i=0; i<20; i++){
     const capital = document.createElement('p');
         capital.innerHTML = `<b>Capital:</b> ${country.capital}`;
 
+    const population = document.createElement('p');
+    population.innerHTML = `<b>Population:</b> ${countrypop.populationCounts.slice(-1)[0].value.toLocaleString()}`;
+
     info.appendChild(countryName);
-        info.appendChild(capital);
+    info.appendChild(capital);
+    info.appendChild(population);
 
-        card.appendChild(flag);
-        card.appendChild(info);
+    card.appendChild(flag);
+    card.appendChild(info);
 
-        countryCardsContainer.appendChild(card);
+    countryCardsContainer.appendChild(card);
+    }
+    
 }
-     }
 page()
-// async function 
 
+toggleMode.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    toggleMode.textContent = body.classList.contains("dark-mode") ? "Light Mode ☀️" : "Dark Mode 🌜";
+});
 
+document.getElementById("search-input").addEventListener("input", () => {
+    if (document.getElementById("search-input").value === "") {
+        search();
+    }
+});
+
+function search() {
+    const input = document.getElementById("search-input").value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const countryName = card.querySelector(".country-name").textContent.toLowerCase();
+        if (countryName.includes(input)) {
+            card.style.display = "block"; 
+        } else {
+            card.style.display = "none";   
+        }
+    });
+}
