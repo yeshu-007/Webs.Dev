@@ -1,0 +1,17 @@
+{
+  "internships": [
+    { "title": "Web Development Intern at Infosys", "link": "https://infosys.com/careers" },
+    { "title": "UI/UX Internship at TCS Digital", "link": "https://tcs.com/internships" },
+    { "title": "Data Analyst Intern - Accenture", "link": "https://accenture.com" }
+  ],
+  "hackathons": [
+    { "title": "Smart India Hackathon 2025", "link": "https://sih.gov.in" },
+    { "title": "NASA Space Apps Challenge", "link": "https://www.spaceappschallenge.org/" },
+    { "title": "Microsoft Imagine Cup", "link": "https://imaginecup.microsoft.com" }
+  ],
+  "collegeEvents": [
+    { "title": "TechXplore 2025", "link": "#" },
+    { "title": "Designathon 2025", "link": "#" },
+    { "title": "Eco Innovation Week", "link": "#" }
+  ]
+}

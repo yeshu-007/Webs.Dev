@@ -177,6 +177,36 @@ function startCurrencyRotation() {
 }
 startCurrencyRotation();
 
+async function loadSidebarData() {
+  try {
+    const res = await fetch("data.json"); 
+    const data = await res.json();
+
+    const internshipBox = document.getElementById("internship-item");
+    internshipBox.innerHTML = data.internships
+      .map(i => `<a href="${i.link}" target="_blank" class="news-item">${i.title}</a>`)
+      .join("<br>");
+
+    const hackathonBox = document.getElementById("hackathon-item");
+    hackathonBox.innerHTML = data.hackathons
+      .map(h => `<a href="${h.link}" target="_blank" class="news-item">${h.title}</a>`)
+      .join("<br>");
+
+    const collegeBox = document.getElementById("college-events-item");
+    collegeBox.innerHTML = data.collegeEvents
+      .map(e => `<a href="${e.link}" target="_blank" class="news-item">${e.title}</a>`)
+      .join("<br>");
+  } catch (err) {
+    console.error("Error loading sidebar data:", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupTiles();
+  setupEventCards();
+  loadSidebarData(); // new
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   setupTiles();
   setupEventCards();
