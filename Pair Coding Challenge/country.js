@@ -20,7 +20,9 @@ async function page() {
     countryCardsContainer.innerHTML = "";
 
     for (let i = 0; i < 200; i++) {
+
         const country = desha.data[i];
+
         const countrypop = jana.data.find(c => c.country === country.name);
 
         const countryflag = dhwaja.data.find(f => f.name === country.name);
@@ -34,9 +36,9 @@ async function page() {
         flag.src = countryflag ? countryflag.flag : "na.png";
         flag.alt = countryflag ? `${country.name} Flag` : "No Flag Available";
 
-        flag.onerror = () => {
-            flag.src = "na.png";
-        };
+        // flag.onerror = () => {
+        //     flag.src = "na.png";
+        // };
 
         const info = document.createElement('div');
         info.classList.add('country-info');
@@ -91,3 +93,4 @@ function search() {
         }
     });
 }
+

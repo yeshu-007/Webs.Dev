@@ -20,8 +20,6 @@
     font-family: 'Trebuchet MS';
     font-weight: 500;
     cursor:pointer;
-    display: flex;
-    align-items: center;
     gap: 5px;
     border: none;
     background: none;
@@ -169,3 +167,4 @@ body.dark-mode .card:hover {
     transform: scale(1.05);
     box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.2);
 }
+
